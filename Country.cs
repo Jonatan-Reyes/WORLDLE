@@ -1,11 +1,13 @@
+using System;
+using System.Collections.Generic;
 namespace WORLDLE {
     public class Country{
         private int numvalue;
         private float c_longitude;
         private float c_latitude;
-        private int area;
-        private int population;
-        private int capita_gdp;
+        private float area;
+        private float population;
+        private float capita_gdp;
         private string religion;
         private string language;
         private string currency;
@@ -35,23 +37,23 @@ namespace WORLDLE {
         }
 
         public bool Compare(Country count){
-            float longcomp = abs(c_longitude - count.c_longitude);
-            float latcomp = abs(c_latitude - count.c_latitude);
-            float areacomp = abs(area - c.area)/(area/100);
-            float popcomp = abs(population - count.population)/(population/100);
-            float gdpcomp = abs(capita_gdp - count.capita_gdp)/(popcomp/100);
-            bool relcomp = religion == count.religion;
-            bool langcomp = language == count.language;
-            bool currency = currency == count.currency;
-            OneComp(longcomp);
-            OneComp(latcomp);
-            OneComp(areacomp);
-            OneComp(popcomp);
-            OneComp(gdpcomp);
+            float longcomp = Math.Abs(c_longitude - count.c_longitude);
+            float latcomp = Math.Abs(c_latitude - count.c_latitude);
+            float areacomp = Math.Abs(area - count.area)/(area/100);
+            float popcomp = Math.Abs(population - count.population)/(population/100);
+            float gdpcomp = Math.Abs(capita_gdp - count.capita_gdp)/(popcomp/100);
+            bool relcomp = (religion == count.religion);
+            bool langcomp = (language == count.language);
+            bool cur = (currency == count.currency);
+            OneComp(longcomp, "Capital Longitude");
+            OneComp(latcomp, "Capital latitude");
+            OneComp(areacomp, "Area");
+            OneComp(popcomp, "Population");
+            OneComp(gdpcomp, "gdp");
             Console.WriteLine(relcomp);
             Console.WriteLine(langcomp);
-            Console.WriteLine(currency);
-            return (numvalue == c.numvalue);
+            Console.WriteLine(cur);
+            return (numvalue == count.numvalue);
         }
     }
 }

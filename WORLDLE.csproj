@@ -1,0 +1,9 @@
+
+<Project Sdk="/usr/share/dotnet/shared/Microsoft.NETCore.App">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>
