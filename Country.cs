@@ -21,6 +21,7 @@ namespace WORLDLE {
             capita_gdp = gdp;
             religion = rel;
             currency = curr;
+            language = lan;
         }
 
         public void OneComp(float checker, string heuristic) {
@@ -50,9 +51,9 @@ namespace WORLDLE {
             OneComp(areacomp, "Area");
             OneComp(popcomp, "Population");
             OneComp(gdpcomp, "gdp");
-            Console.WriteLine(relcomp);
-            Console.WriteLine(langcomp);
-            Console.WriteLine(cur);
+            Console.WriteLine("religion: {0}", relcomp);
+            Console.WriteLine("language: {0}", langcomp);
+            Console.WriteLine("currency: {0}",cur);
             return (numvalue == count.numvalue);
         }
     }
