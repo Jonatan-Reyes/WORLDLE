@@ -34,10 +34,12 @@ namespace WORLDLE {
         }
 
         public void run (){
+            string[] count_num = File.ReadLines("countryfinder.csv").First().Split(',');//skal tage konsol input
             while (running){
                 Console.WriteLine("\n guess a country \n");
-                string guess = Console.ReadLine();//skal tage konsol input
-                running = country.Compare(countries[0]);
+                string guess = Console.ReadLine();
+                int guess_num = Array.IndexOf(count_num, guess);
+                running = country.Compare(countries[guess_num]);
             Console.WriteLine("{0} you won the game", score);
             }
         }
